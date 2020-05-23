@@ -58,11 +58,7 @@ class Usuario implements PosAlfa\Abstraction\BancoDeDados
 
     public function connect(string $dsn, string $user, string $pass): \PDO
     {
-        $conexao = new \PDO($dsn, $user, $pass, [
-            \PDO::ATTR_ERRMODE  => \PDO::ERRMODE_EXCEPTION,
-            \PDO::ATTR_CASE     => \PDO::CASE_LOWER
-        ]);
-        return $conexao;
+        return $conexao = new \PDO($dsn, $user, $pass);
     }
     public function prepare(\PDO $pdo, string $sql): \PDOStatement
     {
@@ -87,7 +83,7 @@ class Usuario implements PosAlfa\Abstraction\BancoDeDados
                     "
                 <tbody>
                     <tr>
-                        <th scope='row'> $id </th>
+                        <td> $id </td>
                         <td> $nome</td>
                         <td> $telefone</td>
                         <td> $email</td>
@@ -95,8 +91,8 @@ class Usuario implements PosAlfa\Abstraction\BancoDeDados
                 </tbody>
                 ";
             }
-        } catch (PDOException $e) {
-            echo 'ERROR: ' . $e->getMessage();
+        } catch (PDOException $error) {
+            echo 'Erro: ' . $error->getMessage();
         }
     }
 }
