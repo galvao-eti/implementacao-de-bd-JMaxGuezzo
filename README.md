@@ -2,6 +2,8 @@
 
 Trabalho final da turma de 2019 da Disciplina Orientação a Objetos usando PHP como Linguagem de Implementação.
 
+--> Nome: Jean Max Guezzo <--
+
 ## Orientações
 
 1. Inscreva-se no trabalho [neste link](https://classroom.github.com/a/M4OzaYm2);
